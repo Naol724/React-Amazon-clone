@@ -1,0 +1,163 @@
+
+.header_container {
+    background-color: #101010;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    height: 70px;
+    padding: 0 10px;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+}
+
+.logo_container img {
+    width: 80%;
+    padding-top: 5px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.delivery {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+}
+
+.search select,
+.search input {
+    padding: 10px;
+    font-weight: bold;
+    outline: none;
+}
+
+.search select {
+    border: none;
+    background-color: #eee;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+}
+
+.search svg {
+    padding: 7px;
+    background-color: #febd69;
+    color: #1a1a1a;
+    cursor: pointer;
+}
+
+.search svg:hover {
+    background-color: #d49644;
+}
+
+.order_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order_container a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.order_container a:hover {
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.order_container p {
+    font-size: 10px;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.language img {
+    width: 20px;
+}
+
+.language select {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart span {
+    position: absolute;
+    font-weight: bold;
+    top: -8px;
+    left: 20px;
+    font-size: 18px;
+    color: orange;
+}
+
+.lower_container {
+    background-color: #232f3e;
+    color: white;
+}
+
+.lower_container ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding-top: 8px;
+}
+
+.lower_container ul li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.lower_container ul li:hover {
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.lower_container ul li:first-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+    .header_container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .order_container a:nth-child(n+2) {
+        display: none;
+    }
+
+    .language {
+        display: none;
+    }
+}

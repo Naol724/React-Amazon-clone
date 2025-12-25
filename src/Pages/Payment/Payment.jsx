@@ -49,7 +49,7 @@ function Payment() {
 
             const clientSecret = response.data.clientSecret;
 
-            //2. Confirm payment
+            //2. Confirm payments
             const { paymentIntent } = await stripe.confirmCardPayment(
                 clientSecret,
                 {

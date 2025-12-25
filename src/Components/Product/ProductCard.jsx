@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import Rating from "@mui/material/Rating";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import Classes from "./Product.module.css";
 import { Link } from "react-router-dom";
+import { DataContext } from "../DataProvider/DataProvider";
+import { Type } from '../../Utility/action.Type';
 
-function ProductCard({ product, flex, renderDesc }) {
-  if (!product) return null; // protect from undefined
+function ProductCard({ product, flex, renderDesc, renderAdd }) {
 
+  if (!product) {
+    return null; // or <div>Loading...</div>
+  }
   const { id, image, title, rating, price, description } = product;
+
+  const [{ basket }, dispatch] = useContext(DataContext);
+
+  const addToCart = () => {
+  dispatch({
+    type: Type.ADD_TO_BASKET,
+    item: {
+      image, title, id, rating, price, description
+    }
+      });
+  };
 
   return (
     <div
@@ -20,20 +35,25 @@ function ProductCard({ product, flex, renderDesc }) {
       </Link>
 
       <div>
-        <h3>{title}</h3>
+        <h3 className={Classes.head3}>{title}</h3>
 
-        {renderDesc && <div>{description}</div>}
+        {renderDesc && <p style={{ maxWidth: "500px" }}>{description}</p>}
 
         <div className={Classes.rating}>
-          <Rating value={rating?.rate} precision={0.1} readOnly />
-          <small>{rating?.count}</small>
+          <Rating value={rating?.rate || 0} precision={0.1} />
+          <small>{rating?.count || 0}</small>
         </div>
 
         <div>
           <CurrencyFormat amount={price} />
         </div>
 
-        <button className={Classes.button}>Add to cart</button>
+        {
+          renderAdd && <button className={Classes.button} onClick={addToCart}>
+          Add to cart
+        </button>
+        }
+
       </div>
     </div>
   );

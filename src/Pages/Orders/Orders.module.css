@@ -1,0 +1,36 @@
+:root{
+    --primary-color: #fcbd69;
+    --primary-shade: #d29644;
+}
+.container{
+    background-color: #fff;
+    padding: 30px;
+
+}
+.orders_container{
+    background-color: #fff;
+    padding: 20px;
+
+}
+.orders_container h2{
+    border-bottom: 2px solid var(--primary-shade);
+    padding: 20px;
+}
+.orders_container p{
+    padding: 12px;
+}
+.orders_container img{
+    width: 100px !important;
+}
+.orders_container div{
+    height: auto !important;
+}
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}

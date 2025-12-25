@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Classes from "./Header.module.css";
 import { Link } from "react-router-dom";
-
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
-
 import LowerHeader from "./LowerHeader";
+import { DataContext } from "../DataProvider/DataProvider";
+import {auth} from '../../Utility/firebase/';
 
 const Header = () => {
+  const [{user, basket }, dispatch ] = useContext(DataContext);
+  const totalItem = basket?.reduce((amount, item)=>{
+    return item.amount + amount
+  }, 0)
+
   return (
-    <>
+    <section className={Classes.fixed}>
       <section>
         <div className={Classes.header_container}>
           {/* Logo Section */}
@@ -38,8 +43,7 @@ const Header = () => {
             </select>
 
             <input type="text" placeholder="Search product" />
-
-            <BsSearch size={25} />
+            <BsSearch size={38} />
           </div>
 
           {/* Account + Cart Section */}
@@ -51,9 +55,21 @@ const Header = () => {
               </select>
             </div>
 
-            <Link to="/auth">
-              <p>Sign In</p>
+            <Link to={!user && "/auth"}>
+            <div>
+            {
+              user?( 
+              <>
+              <p>Hello {user?.email?.split("@")[0]}</p>
+              <span onClick={() => auth.signOut()}>Sign Out</span>
+              </>
+            ):(
+              <>
+              <p>Hello, sign in</p>
               <span>Account & Lists</span>
+              </>
+              )}
+            </div>
             </Link>
 
             <Link to="/orders">
@@ -63,14 +79,14 @@ const Header = () => {
 
             <Link to="/cart" className={Classes.cart}>
               <BiCart size={35} />
-              <span>0</span>
+              <span>{totalItem}</span>
             </Link>
           </div>
         </div>
       </section>
 
       <LowerHeader />
-    </>
+    </section>
   );
 };
 

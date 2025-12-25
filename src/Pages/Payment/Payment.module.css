@@ -1,0 +1,93 @@
+:root {
+    --primary-color: #fcbd69;
+    --primary-shade: #d29644;
+}
+
+.payment_header {
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(254, 237, 237);
+}
+
+/* Section wrapper (was missing) */
+.payment_section {
+    padding: 30px;
+}
+
+/* Main flex layout */
+.flex {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    align-items: flex-start;
+}
+
+.flex h3 {
+    min-width: 300px;
+}
+
+.flex img {
+    width: 80px !important;
+}
+
+.flex div {
+    height: auto !important;
+}
+
+/* FIXED class name */
+.Payment_card_container {
+    max-width: 350px;
+    width: 100%;
+}
+
+.Payment_details {
+    width: 100%;
+}
+
+/* Price section */
+.payment_price {
+    padding: 20px 0;
+}
+
+.payment_price > div {
+    display: flex;
+    font-size: 16px;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Button */
+.payment_price button {
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Payment_details button:hover {
+    background-color: var(--primary-shade);
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    color: rgb(52, 52, 52);
+}
+
+@media screen and (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex h3 {
+        min-width: auto;
+    }
+}

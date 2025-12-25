@@ -18,7 +18,7 @@ function Product() {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log("Error fetching data:", err);
+        console.log(err);
         setIsLoading(false);
       });
   }, []);
@@ -29,9 +29,10 @@ function Product() {
         <Loader />
       ) : (
         <section className={Classes.products_container}>
-          {Products.map((singleProduct) => (
-            <ProductCard key={singleProduct.id} product={singleProduct} />
-          ))}
+          {Products.map((singleProduct) => {
+            return <ProductCard renderAdd={true} product={singleProduct} key={singleProduct.id}  />
+          })
+        }
         </section>
       )}
     </>

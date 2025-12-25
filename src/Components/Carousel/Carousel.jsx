@@ -15,7 +15,7 @@ function Carousels() {
         showStatus={false}
       >
         {img.map((imageItemLink, index) => (
-          <img key={index} src={imageItemLink} alt={`slide-${index}`} />
+          <img key={imageItemLink} src={imageItemLink} alt={`slide-${index}`} />
         ))}
       </Slider>
       <div className={Classes.hero_img__fadeBottom} />

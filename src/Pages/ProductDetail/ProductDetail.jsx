@@ -5,37 +5,38 @@ import LayOut from "../../Components/LayOut/LayOut";
 import Loader from "../../Components/Loader/Loader";
 import ProductCard from "../../Components/Product/ProductCard";
 
-const ProductDetail = () => {
-  const [product, setProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const { productId } = useParams();
+const productUrl = "https://fakestoreapi.com"; 
 
-  const API_URL = import.meta.env.VITE_API_URL || "https://fakestoreapi.com";
+function ProductDetail() {
+  const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const { productId } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
-
     axios
-      .get(`${API_URL}/products/${productId}`)
+      .get(`${productUrl}/products/${productId}`)
       .then((res) => {
         setProduct(res.data);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log("Error fetching product:", err);
+        console.log(err);
         setIsLoading(false);
       });
-  }, [productId, API_URL]);
+  }, [productId]);
 
   return (
     <LayOut>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <ProductCard product={product} flex={true} renderDesc={true} />
-      )}
+      {isLoading ? (<Loader />) : (<ProductCard product={product}
+      flex ={true}
+      renderDesc={true}
+      renderAdd={true}
+
+/>)}
+
     </LayOut>
   );
-};
+}
 
 export default ProductDetail;

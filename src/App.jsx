@@ -1,12 +1,31 @@
-import React from 'react';
-import './App.css';
-import Routing from './Router'; // Make sure the file is named Router.jsx
+import React, { useEffect, useContext } from 'react';
+import { DataContext } from './Components/DataProvider/DataProvider';
+import Routing from './Router'; 
+import { Type }  from './Utility/action.Type';
+import { auth } from './Utility/firebase';
 
 function App() {
-  return (
-    <div>
-      <Routing />
-    </div>
+  const [{user}, dispatch] = useContext(DataContext); 
+  
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        // console.log(authUser);
+        // user is logged in
+        dispatch({
+          type: Type.SET_USER,
+          user: authUser,
+        })
+      } else {
+        // user is logged out
+        dispatch({
+          type: Type.SET_USER,
+          user: null,
+        });
+      }
+    });
+  }, []);
+  return ( <Routing />
   );
 }
 

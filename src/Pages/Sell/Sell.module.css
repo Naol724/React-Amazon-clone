@@ -1,0 +1,451 @@
+:root {
+    --primary-color: #fcbd69;
+    --primary-shade: #d29644;
+    --text-color: #333;
+    --border-color: #e1e5e9;
+    --background-light: #f8f9fa;
+    --success-color: #28a745;
+    --accent-color: #007bff;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sell_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 80vh;
+}
+
+.sell_header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.sell_header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.sell_header p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.get_started_btn {
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-shade));
+    color: #111;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.get_started_btn:hover {
+    background: linear-gradient(to bottom, var(--primary-shade), #c08a3a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Plans Section */
+.plans_section {
+    margin-bottom: 60px;
+}
+
+.plans_section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.plans_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.plan_card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.plan_card:hover {
+    transform: translateY(-5px);
+}
+
+.plan_card.recommended {
+    border: 3px solid var(--accent-color);
+}
+
+.recommended_badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.plan_card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.plan_description {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.plan_price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-shade);
+    margin-bottom: 25px;
+}
+
+.features_list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.features_list li {
+    color: var(--success-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.choose_plan_btn {
+    width: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-shade));
+    color: #111;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.choose_plan_btn:hover {
+    background: linear-gradient(to bottom, var(--primary-shade), #c08a3a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Categories Section */
+.categories_section {
+    margin-bottom: 60px;
+}
+
+.categories_section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.categories_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category_card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.category_card:hover {
+    transform: translateY(-3px);
+}
+
+.category_icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.category_card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.category_card p {
+    color: var(--primary-shade);
+    font-weight: 600;
+}
+
+/* How to Start */
+.how_to_start {
+    margin-bottom: 60px;
+}
+
+.how_to_start h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.steps_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.step {
+    text-align: center;
+    padding: 20px;
+}
+
+.step_number {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.step p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Benefits Section */
+.benefits_section {
+    margin-bottom: 60px;
+}
+
+.benefits_section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.benefits_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.benefit_item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.benefit_icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.benefit_item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.benefit_item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta_section {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--background-light);
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.cta_section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.cta_section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.start_selling_btn {
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-shade));
+    color: #111;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.start_selling_btn:hover {
+    background: linear-gradient(to bottom, var(--primary-shade), #c08a3a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .sell_container {
+        padding: 15px;
+    }
+
+    .sell_header {
+        padding: 40px 15px;
+        margin-bottom: 40px;
+    }
+
+    .sell_header h1 {
+        font-size: 2.2rem;
+    }
+
+    .sell_header p {
+        font-size: 1.1rem;
+    }
+
+    .plans_section h2,
+    .categories_section h2,
+    .how_to_start h2,
+    .benefits_section h2,
+    .cta_section h2 {
+        font-size: 1.8rem;
+    }
+
+    .plans_grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .plan_card {
+        padding: 25px;
+    }
+
+    .categories_grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .steps_container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefits_grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta_section {
+        padding: 40px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sell_container {
+        padding: 10px;
+    }
+
+    .sell_header {
+        padding: 30px 10px;
+        margin-bottom: 30px;
+    }
+
+    .sell_header h1 {
+        font-size: 2rem;
+    }
+
+    .sell_header p {
+        font-size: 1rem;
+    }
+
+    .plans_section h2,
+    .categories_section h2,
+    .how_to_start h2,
+    .benefits_section h2,
+    .cta_section h2 {
+        font-size: 1.5rem;
+    }
+
+    .plan_card {
+        padding: 20px;
+    }
+
+    .category_card {
+        padding: 20px;
+    }
+
+    .category_icon {
+        font-size: 2.5rem;
+    }
+
+    .step_number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .benefit_item {
+        padding: 20px;
+    }
+
+    .benefit_icon {
+        font-size: 2.5rem;
+    }
+
+    .cta_section {
+        padding: 30px 10px;
+    }
+
+    .cta_section p {
+        font-size: 1rem;
+    }
+}

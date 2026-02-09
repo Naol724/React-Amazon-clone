@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import LayOut from '../../Components/LayOut/LayOut';
 import { DataContext } from '../../Components/DataProvider/DataProvider';
 import  ProductCard from '../../Components/Product/ProductCard'
@@ -11,6 +11,12 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function Cart() {
     const [{basket, user}, dispatch]= useContext(DataContext);
+    
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const total = basket.reduce((amount, item)=>{
         return amount + item.price * item.amount ;
     }, 0)
@@ -35,13 +41,43 @@ return (
             <div className={Classes.cart_container}>
             <h2>Hello</h2>
             <h3>Your shopping basket</h3>
+            
+            {/* Debug and Clear Basket Button */}
+            <div style={{ 
+                padding: '10px', 
+                backgroundColor: '#f8f9fa', 
+                border: '1px solid #dee2e6',
+                borderRadius: '5px',
+                marginBottom: '15px',
+                display: 'flex',
+                gap: '10px',
+                alignItems: 'center'
+            }}>
+                <button 
+                    onClick={() => dispatch({ type: Type.EMPTY_BASKET })}
+                    style={{
+                        padding: '8px 16px',
+                        backgroundColor: '#dc3545',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer'
+                    }}
+                >
+                    Clear Basket
+                </button>
+                <span style={{ fontSize: '14px', color: '#666' }}>
+                    Clear basket and add fresh items to see descriptions
+                </span>
+            </div>
+            
             <hr />
             {
                 basket?.length==0?(<p>Opps ! No item in your cart</p>):(
                     basket?.map((item,i)=>{
-                        return <section className={Classes.cart_product}>
+                        console.log("Cart item:", i, item);
+                        return <section key={i} className={Classes.cart_product}>
                 <ProductCard
-                    key={i}
                     product={item}
                     renderDesc={true}
                     renderAdd={false}

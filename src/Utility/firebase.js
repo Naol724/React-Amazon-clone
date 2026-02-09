@@ -1,8 +1,10 @@
 // firebase.js (Firebase v9 - correct)
 
-import { initializeApp } from "firebase/app";
+import  firebase  from "firebase/compat/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+// import { getFirestore } from "firebase/firestore";
+import "firebase/compat/firestore"
+import "firebase/compat/auth"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDOT-2clmH6MgKt108fUGV0XVb1FXuhPJw",
@@ -13,7 +15,7 @@ const firebaseConfig = {
   appId: "1:510631943790:web:286258b04d11524efb507f"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const db = app.firestore();

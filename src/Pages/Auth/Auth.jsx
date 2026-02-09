@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Classes from './Signup.module.css'
 import {Link, useNavigate, useLocation } from 'react-router-dom'
 import {auth} from '../../Utility/firebase'
@@ -21,6 +21,11 @@ function Auth() {
     const [{user}, dispatch] = useContext(DataContext);
     const navigate = useNavigate();
     const navStateDate = useLocation();
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const authHandler = async(e) =>{
     e.preventDefault();

@@ -30,30 +30,35 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
         flex ? Classes.product_flexed : ""
       }`}
     >
-      <Link to={`/products/${id}`}>
-        <img src={image} alt={title} className={Classes.img_container} />
-      </Link>
+      <div className={Classes.image_container}>
+        <Link to={`/products/${id}`}>
+          <img src={image} alt={title} className={Classes.img_container} />
+        </Link>
+      </div>
 
-      <div>
-        <h3 className={Classes.head3}>{title}</h3>
+      <div className={Classes.content_container}>
+        <Link to={`/products/${id}`} className={Classes.title_link}>
+          <h3 className={Classes.head3}>{title}</h3>
+        </Link>
 
-        {renderDesc && <p style={{ maxWidth: "500px" }}>{description}</p>}
+        {renderDesc && (
+          <p className={Classes.description}>{description || "No description available"}</p>
+        )}
 
         <div className={Classes.rating}>
-          <Rating value={rating?.rate || 0} precision={0.1} />
-          <small>{rating?.count || 0}</small>
+          <Rating value={rating?.rate || 0} precision={0.1} size="small" />
+          <small className={Classes.rating_count}>({rating?.count || 0})</small>
         </div>
 
-        <div>
+        <div className={Classes.price_container}>
           <CurrencyFormat amount={price} />
         </div>
 
-        {
-          renderAdd && <button className={Classes.button} onClick={addToCart}>
-          Add to cart
-        </button>
-        }
-
+        {renderAdd && (
+          <button className={Classes.button} onClick={addToCart}>
+            Add to cart
+          </button>
+        )}
       </div>
     </div>
   );

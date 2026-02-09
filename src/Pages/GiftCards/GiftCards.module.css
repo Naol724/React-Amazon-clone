@@ -1,0 +1,432 @@
+:root {
+    --primary-color: #fcbd69;
+    --primary-shade: #d29644;
+    --text-color: #333;
+    --border-color: #e1e5e9;
+    --background-light: #f8f9fa;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.giftcards_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 80vh;
+}
+
+.giftcards_header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.giftcards_header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.giftcards_header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.giftcard_builder {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.builder_section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.builder_section h2 {
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-size: 1.8rem;
+}
+
+.builder_section h3 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+/* Design Selection */
+.design_section {
+    margin-bottom: 30px;
+}
+
+.designs_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.design_card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    color: white;
+    font-weight: 600;
+}
+
+.design_card:hover,
+.design_card.selected {
+    border-color: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.design_icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Amount Selection */
+.amount_section {
+    margin-bottom: 30px;
+}
+
+.amounts_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.amount_btn {
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.amount_btn:hover,
+.amount_btn.selected {
+    border-color: var(--primary-color);
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-shade));
+    color: #111;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom_amount {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.custom_amount label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.custom_amount input {
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.custom_amount input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Personalization */
+.personalization_section {
+    margin-bottom: 30px;
+}
+
+.form_group {
+    margin-bottom: 20px;
+}
+
+.form_group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form_group input,
+.form_group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.add_to_cart_btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-shade));
+    color: #111;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add_to_cart_btn:hover {
+    background: linear-gradient(to bottom, var(--primary-shade), #c08a3a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Preview Section */
+.preview_section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.preview_section h3 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.giftcard_preview {
+    width: 100%;
+    aspect-ratio: 1.6;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amazon_logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.gift_card_text {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.preview_design {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview_icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.preview_amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.preview_footer {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Features Section */
+.features_section {
+    margin-bottom: 40px;
+}
+
+.features_section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.features_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.feature_item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature_icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature_item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.feature_item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .giftcards_container {
+        padding: 15px;
+    }
+
+    .giftcards_header {
+        padding: 30px 15px;
+        margin-bottom: 40px;
+    }
+
+    .giftcards_header h1 {
+        font-size: 2rem;
+    }
+
+    .giftcards_header p {
+        font-size: 1rem;
+    }
+
+    .giftcard_builder {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .builder_section {
+        padding: 20px;
+    }
+
+    .preview_section {
+        position: static;
+        padding: 20px;
+    }
+
+    .designs_grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .design_card {
+        padding: 15px;
+    }
+
+    .design_icon {
+        font-size: 1.5rem;
+    }
+
+    .amounts_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .preview_icon {
+        font-size: 3rem;
+    }
+
+    .preview_amount {
+        font-size: 2rem;
+    }
+
+    .features_grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .giftcards_container {
+        padding: 10px;
+    }
+
+    .giftcards_header {
+        padding: 20px 10px;
+        margin-bottom: 30px;
+    }
+
+    .giftcards_header h1 {
+        font-size: 1.8rem;
+    }
+
+    .giftcards_header p {
+        font-size: 0.9rem;
+    }
+
+    .builder_section {
+        padding: 15px;
+    }
+
+    .builder_section h2 {
+        font-size: 1.5rem;
+    }
+
+    .builder_section h3 {
+        font-size: 1.2rem;
+    }
+
+    .designs_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .amounts_grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .preview_section {
+        padding: 15px;
+    }
+
+    .feature_item {
+        padding: 20px;
+    }
+
+    .feature_icon {
+        font-size: 2.5rem;
+    }
+}

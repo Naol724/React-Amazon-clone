@@ -1,7 +1,7 @@
-# Amazon Clone - Full-Stack E-commerce Application
+# Ecommerce Website - Full-Stack E-commerce Application
 
 <div align="center">
-  <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo" width="200"/>
+  <h1>🛒 Modern E-commerce Platform</h1>
   
   [![Home page](./public/amazon-1.png)]
   [![card](./public/amazon-2.png)]
@@ -34,7 +34,7 @@
 
 ## 🎯 Overview
 
-A fully functional Amazon clone built with React and modern web technologies. This e-commerce application provides a complete shopping experience with user authentication, product browsing, cart management, secure payments, and order tracking. The application is fully responsive and optimized for all device sizes from mobile phones (320px) to large desktop screens.
+A fully functional e-commerce website built with React and modern web technologies. This e-commerce application provides a complete shopping experience with user authentication, product browsing, cart management, secure payments, and order tracking. The application is fully responsive and optimized for all device sizes from mobile phones (320px) to large desktop screens.
 
 ### Key Highlights
 
@@ -124,7 +124,7 @@ A fully functional Amazon clone built with React and modern web technologies. Th
 ## 📁 Project Structure
 
 ```
-amazon-clone/
+ecommerce-website/
 ├── public/
 │   └── Amazon_icon.svg.svg
 ├── src/

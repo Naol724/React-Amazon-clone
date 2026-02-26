@@ -201,7 +201,7 @@ function CustomerService() {
             </div>
             <div className={classes.contact_method}>
               <h3>📧 Email Support</h3>
-              <p>support@amazon-clone.com</p>
+              <p>support@ecommerce-shop.com</p>
               <p>Response within 24 hours</p>
             </div>
           </div>
